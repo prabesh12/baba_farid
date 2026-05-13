@@ -4,7 +4,7 @@ export default function HeroSection() {
   const emailUrl = "mailto:aman@babafaridroofing.com";
 
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+    <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:py-16 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
       <div className="space-y-8">
         <div className="space-y-1 animate-in fade-in slide-in-from-left-4 duration-700">
           <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/8 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary hover:bg-primary/12 transition-colors">
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
         <a
           href={phoneUrl}
-          className="block rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-6 py-4 text-center text-lg font-bold uppercase tracking-wider text-on-primary hover:shadow-2xl hover:shadow-primary/40 hover:scale-105 transition-all animate-in fade-in slide-in-from-left-4 duration-700 delay-400 group"
+          className="block rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 md:px-6 md:py-4 text-center text-sm md:text-lg font-bold uppercase tracking-wider text-on-primary hover:shadow-2xl hover:shadow-primary/40 hover:scale-105 transition-all animate-in fade-in slide-in-from-left-4 duration-700 delay-400 group"
         >
           <span className="inline-flex items-center gap-2">
             Call Now: 0468 302 786

@@ -16,7 +16,7 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
   ];
 
   return (
-    <section id="enquiry" className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section id="enquiry" className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left Column */}
         <div className="space-y-6">
@@ -70,35 +70,35 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
 
           {/* Name Field */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="name">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="name">
               Full Name
             </label>
             <input
               id="name"
               name="name"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="Your name"
             />
           </div>
 
           {/* Phone Field */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="phone">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="phone">
               Phone
             </label>
             <input
               id="phone"
               name="phone"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="0468 302 786"
             />
           </div>
 
           {/* Email Field */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="email">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -106,21 +106,21 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
               name="email"
               type="email"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="your@email.com"
             />
           </div>
 
           {/* Service Select */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="service">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="service">
               Service Needed
             </label>
             <select
               id="service"
               name="service"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
             >
               <option value="">Select a service</option>
               {services.map((service) => (
@@ -133,7 +133,7 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
 
           {/* Message Field */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="message">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="message">
               Project Details
             </label>
             <textarea
@@ -141,7 +141,7 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
               name="message"
               rows={4}
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none resize-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none resize-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="Describe your project..."
             />
           </div>
@@ -149,7 +149,7 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full rounded-lg bg-gradient-to-r from-primary to-primary/90 px-6 py-3 font-bold uppercase tracking-widest text-on-primary hover:shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300 group"
+            className="w-full rounded-lg bg-gradient-to-r from-primary to-primary/90 px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold uppercase tracking-widest text-on-primary hover:shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300 group"
           >
             <span className="inline-flex items-center justify-center gap-2">
               Send Enquiry

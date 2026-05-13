@@ -4,7 +4,7 @@ type ServiceAreasSectionProps = {
 
 export default function ServiceAreasSection({ serviceAreas }: ServiceAreasSectionProps) {
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
       <div className="space-y-3 mb-8">
         <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Service</span> Areas

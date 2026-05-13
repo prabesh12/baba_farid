@@ -8,7 +8,7 @@ type FeedbackSectionProps = {
 
 export default function FeedbackSection({ services, onSubmit }: FeedbackSectionProps) {
   return (
-    <section id="feedback" className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section id="feedback" className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
         {/* Left Column - Content */}
         <div className="space-y-6">
@@ -54,32 +54,32 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
         {/* Right Column - Form */}
         <form
           onSubmit={onSubmit}
-          className="space-y-5 rounded-2xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-fit sticky top-32"
+          className="space-y-5 rounded-2xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-5 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-fit sticky top-32"
         >
           {/* Name Field */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-name">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-name">
               Full Name
             </label>
             <input
               id="feedback-name"
               name="name"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="Your name"
             />
           </div>
 
           {/* Service Select */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-service">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-service">
               Service Used
             </label>
             <select
               id="feedback-service"
               name="service"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
             >
               <option value="">Select a service</option>
               {services.map((service) => (
@@ -92,14 +92,14 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
 
           {/* Rating Select */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-rating">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-rating">
               Rating
             </label>
             <select
               id="feedback-rating"
               name="rating"
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
             >
               <option value="">Choose rating</option>
               <option value="5">★★★★★ Excellent</option>
@@ -112,7 +112,7 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
 
           {/* Feedback Textarea */}
           <div>
-            <label className="block text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-message">
+            <label className="block text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-2" htmlFor="feedback-message">
               Your Feedback
             </label>
             <textarea
@@ -120,7 +120,7 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
               name="feedback"
               rows={4}
               required
-              className="w-full rounded-lg border border-primary/20 bg-white/80 px-4 py-3 text-secondary outline-none resize-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
+              className="w-full rounded-lg border border-primary/20 bg-white/80 px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-secondary outline-none resize-none transition-all duration-300 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 hover:border-primary/40"
               placeholder="Share your experience..."
             />
           </div>
@@ -128,7 +128,7 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full rounded-lg bg-gradient-to-r from-primary to-primary/90 px-6 py-3 font-bold uppercase tracking-widest text-on-primary hover:shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300 group"
+            className="w-full rounded-lg bg-gradient-to-r from-primary to-primary/90 px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold uppercase tracking-widest text-on-primary hover:shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300 group"
           >
             <span className="inline-flex items-center justify-center gap-2">
               Submit Feedback
