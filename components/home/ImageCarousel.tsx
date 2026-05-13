@@ -23,7 +23,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
   if (images.length === 0) {
     return (
-      <div className="w-full rounded-2xl border border-primary/15 bg-primary/5 h-96 flex items-center justify-center">
+      <div className="w-full rounded-2xl border border-primary/15 bg-primary/5 h-64 flex items-center justify-center">
         <p className="text-secondary/60">No images available</p>
       </div>
     );
@@ -32,7 +32,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   return (
     <div
       className="group relative w-full overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-lg"
-      style={{ paddingBottom: "66.67%" }}
+      style={{ paddingBottom: "40%" }}
       onMouseEnter={() => setIsAutoPlay(false)}
       onMouseLeave={() => setIsAutoPlay(true)}
     >
