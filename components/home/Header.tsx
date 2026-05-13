@@ -24,7 +24,7 @@ export default function Header() {
         <a href="#home" className="group flex items-center gap-3 font-heading text-xl uppercase tracking-wider">
           <Image
             src="/Logo.jpeg"
-            alt="Baba Farid Roofing logo"
+            alt="Baba Faarid Roofing logo"
             width={56}
             height={56}
             quality={100}
@@ -32,7 +32,7 @@ export default function Header() {
             className="h-12 w-12 rounded-lg object-cover shadow-md ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all"
             priority
           />
-          <span className="font-bold text-primary hidden sm:block">Baba Farid</span>
+          <span className="font-bold text-primary hidden sm:block">Baba Faarid</span>
         </a>
 
         {/* Desktop Navigation */}

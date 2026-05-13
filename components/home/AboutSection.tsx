@@ -10,7 +10,7 @@ export default function AboutSection() {
     <section id="about" className="mx-auto w-full max-w-6xl px-6 py-20">
       <div className="space-y-3 mb-8">
         <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Baba Farid Roofing</span>
+          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Baba Faarid Roofing</span>
         </h2>
       </div>
 
@@ -20,7 +20,7 @@ export default function AboutSection() {
             <div className="w-1 h-24 bg-gradient-to-b from-primary to-primary/50 rounded-full group-hover:h-28 transition-all duration-300"></div>
             <div>
               <p className="text-lg leading-relaxed text-secondary/80 group-hover:text-secondary/90 transition-colors duration-300">
-                Baba Farid Roofing provides reliable roofing services across NSW with a strong focus on quality, durable materials, and clean workmanship. From leak repairs to full restorations, each project is completed with attention to detail and clear communication.
+                Baba Faarid Roofing provides reliable roofing services across NSW with a strong focus on quality, durable materials, and clean workmanship. From leak repairs to full restorations, each project is completed with attention to detail and clear communication.
               </p>
             </div>
           </div>

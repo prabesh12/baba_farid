@@ -1,3 +1,6 @@
+import { portfolio } from "./constants";
+import ImageCarousel from "./ImageCarousel";
+
 export default function HeroSection() {
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=136+Fairwater+Boulevard,+Blacktown,+NSW+2148";
   const phoneUrl = "tel:+61468302786";
@@ -20,7 +23,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="max-w-xl text-lg leading-relaxed text-secondary/80 animate-in fade-in slide-in-from-left-4 duration-700 delay-200">
-          Baba Farid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
+          Baba Faarid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
         </p>
 
         <ul className="space-y-3 text-base font-semibold text-secondary/70 animate-in fade-in slide-in-from-left-4 duration-700 delay-300">
@@ -50,33 +53,30 @@ export default function HeroSection() {
           <div className="mb-2 h-1 w-12 bg-gradient-to-r from-primary to-accent rounded-full"></div>
           
           <p className="font-heading text-4xl md:text-3xl uppercase tracking-tight text-primary mb-4">
-            Fast Quotes<br className="md:hidden" />
-            <span className="text-secondary">Clean Work.</span>
-            <br />
-            Real Results.
+            Fast Quotes. Clean Work. Real Results.
           </p>
 
           <p className="text-secondary/80 leading-relaxed mb-8">
             We handle roof restoration plus installation of gutters, fascia, whirlybird, skylight, gutter guards, and solar mesh with a focus on quality and durability.
           </p>
 
-          <div className="space-y-4 mb-8 text-sm">
-            <div className="group/item hover:bg-primary/5 p-3 rounded-lg transition-colors">
-              <p className="font-semibold text-secondary">Email</p>
-              <a href={emailUrl} className="text-primary hover:text-primary/80 transition-colors">
+          <div className="space-y-3 mb-6 text-sm">
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Email</p>
+              <a href={emailUrl} className="text-primary hover:text-primary/80 transition-colors text-sm">
                 aman@babafaridroofing.com
               </a>
             </div>
 
-            <div className="group/item hover:bg-primary/5 p-3 rounded-lg transition-colors">
-              <p className="font-semibold text-secondary">Phone</p>
-              <a href={phoneUrl} className="text-primary hover:text-primary/80 transition-colors font-semibold">
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Phone</p>
+              <a href={phoneUrl} className="text-primary hover:text-primary/80 transition-colors font-semibold text-sm">
                 0468 302 786
               </a>
             </div>
 
-            <div className="group/item hover:bg-primary/5 p-3 rounded-lg transition-colors">
-              <p className="font-semibold text-secondary">Address</p>
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Address</p>
               <a href={mapsUrl} target="_blank" rel="noreferrer" className="text-primary hover:text-primary/80 transition-colors text-xs leading-relaxed">
                 136 Fairwater Boulevard, Blacktown, NSW 2148
               </a>
@@ -110,6 +110,16 @@ export default function HeroSection() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Carousel */}
+      <div className="w-full mt-8">
+        <ImageCarousel 
+          images={portfolio.map((item) => ({
+            src: item.after,
+            alt: item.title,
+          }))} 
+        />
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Choose Us</span>
           </h2>
           <p className="text-lg text-secondary/70 max-w-2xl leading-relaxed">
-            Customers choose Baba Farid Roofing for simple quotes, reliable scheduling, quality workmanship, and a clean finish on every project.
+            Customers choose Baba Faarid Roofing for simple quotes, reliable scheduling, quality workmanship, and a clean finish on every project.
           </p>
         </div>
 

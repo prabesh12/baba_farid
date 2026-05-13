@@ -64,7 +64,7 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
           method="POST"
           className="space-y-5 rounded-2xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
-          <input type="hidden" name="_subject" value="New Free Quote Enquiry - Baba Farid Roofing" />
+          <input type="hidden" name="_subject" value="New Free Quote Enquiry - Baba Faarid Roofing" />
           <input type="hidden" name="_captcha" value="true" />
           <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 

@@ -5,6 +5,7 @@ import FeedbackSection from "./FeedbackSection";
 import Footer from "./Footer";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
+import ImageCarousel from "./ImageCarousel";
 import ProjectsSection from "./ProjectsSection";
 import ReviewsSection from "./ReviewsSection";
 import ServiceAreasSection from "./ServiceAreasSection";
@@ -19,6 +20,7 @@ export {
   Footer,
   Header,
   HeroSection,
+  ImageCarousel,
   ProjectsSection,
   ReviewsSection,
   ServiceAreasSection,
