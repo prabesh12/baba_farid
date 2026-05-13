@@ -6,6 +6,7 @@ import {
   EnquirySection,
   FaqSection,
   FeedbackSection,
+  Footer,
   Header,
   HeroSection,
   ProjectsSection,
@@ -100,6 +101,8 @@ export default function Home() {
         <FaqSection faqs={faqs} />
         <EnquirySection services={services} />
       </main>
+
+      <Footer />
     </div>
   );
 }

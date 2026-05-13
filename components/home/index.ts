@@ -2,6 +2,7 @@ import AboutSection from "./AboutSection";
 import EnquirySection from "./EnquirySection";
 import FaqSection from "./FaqSection";
 import FeedbackSection from "./FeedbackSection";
+import Footer from "./Footer";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import ProjectsSection from "./ProjectsSection";
@@ -15,6 +16,7 @@ export {
   EnquirySection,
   FaqSection,
   FeedbackSection,
+  Footer,
   Header,
   HeroSection,
   ProjectsSection,

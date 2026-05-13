@@ -61,7 +61,7 @@ export default function ReviewsSection({ serviceReviews }: ReviewsSectionProps) 
                         <span
                           key={i}
                           className={`text-lg transition-all duration-300 ${
-                            i < item.rating ? 'text-primary group-hover:scale-125' : 'text-secondary/20'
+                            i < (item.rating || 0) ? 'text-primary group-hover:scale-125' : 'text-secondary/20'
                           }`}
                           style={{ transitionDelay: `${i * 50}ms` }}
                         >
