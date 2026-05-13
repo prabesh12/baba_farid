@@ -1,6 +1,3 @@
-import { portfolio } from "./constants";
-import ImageCarousel from "./ImageCarousel";
-
 export default function HeroSection() {
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=136+Fairwater+Boulevard,+Blacktown,+NSW+2148";
   const phoneUrl = "tel:+61468302786";
@@ -112,15 +109,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Carousel */}
-      <div className="w-full mt-8">
-        <ImageCarousel 
-          images={portfolio.map((item) => ({
-            src: item.after,
-            alt: item.title,
-          }))} 
-        />
-      </div>
     </section>
   );
 }

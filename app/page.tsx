@@ -3,12 +3,14 @@
 import { FormEvent, useEffect, useState } from "react";
 import {
   AboutSection,
+  CarouselSection,
   EnquirySection,
   FaqSection,
   FeedbackSection,
   Footer,
   Header,
   HeroSection,
+  LocationMap,
   ProjectsSection,
   ReviewsSection,
   ServiceAreasSection,
@@ -88,6 +90,8 @@ export default function Home() {
 
       <Header />
 
+      <CarouselSection portfolio={portfolio} />
+
       <main id="home" className="relative z-10 pt-24">
         <HeroSection />
         <ServicesSection services={services} />
@@ -100,6 +104,7 @@ export default function Home() {
 
         <FaqSection faqs={faqs} />
         <EnquirySection services={services} />
+        <LocationMap />
       </main>
 
       <Footer />
