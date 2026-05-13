@@ -8,7 +8,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
   return (
     <section id="faq" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="space-y-4 mb-12">
+        <div className="space-y-3 mb-8">
           <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Frequently Asked</span>
             <br className="hidden sm:block" />

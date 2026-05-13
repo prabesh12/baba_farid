@@ -19,8 +19,8 @@ export default function EnquirySection({ services }: EnquirySectionProps) {
     <section id="enquiry" className="mx-auto w-full max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left Column */}
-        <div className="space-y-8">
-          <div className="space-y-4">
+        <div className="space-y-6">
+          <div className="space-y-2">
             <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Contact</span> & Free Quote
             </h2>

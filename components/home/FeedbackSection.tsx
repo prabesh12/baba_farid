@@ -12,7 +12,7 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
         {/* Left Column - Content */}
         <div className="space-y-6">
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
               Share Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Feedback</span>
             </h2>
@@ -22,7 +22,7 @@ export default function FeedbackSection({ services, onSubmit }: FeedbackSectionP
           </div>
 
           {/* Steps List */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {[
               { icon: "1", label: "Tell us which service you booked" },
               { icon: "2", label: "Rate your experience from 1 to 5 stars" },

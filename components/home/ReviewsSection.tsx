@@ -8,7 +8,7 @@ export default function ReviewsSection({ serviceReviews }: ReviewsSectionProps) 
   return (
     <section id="reviews" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
           <div className="space-y-2">
             <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Reviews</span> &

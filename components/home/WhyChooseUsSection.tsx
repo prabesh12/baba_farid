@@ -14,7 +14,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
   return (
     <section id="process" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="space-y-4 mb-12">
+        <div className="space-y-3 mb-8">
           <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Choose Us</span>
           </h2>
@@ -24,7 +24,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
         </div>
 
         {/* Reasons Grid */}
-        <div className="grid gap-6 lg:grid-cols-2 mb-14">
+        <div className="grid gap-6 lg:grid-cols-2 mb-8">
           {reasons.map((reason, idx) => (
             <article
               key={reason.title}

@@ -8,13 +8,13 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="mx-auto w-full max-w-6xl px-6 py-20">
-      <div className="space-y-4 mb-12">
+      <div className="space-y-3 mb-8">
         <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
           About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Baba Farid Roofing</span>
         </h2>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 mb-12">
+      <div className="grid gap-8 md:grid-cols-2 mb-8">
         <div className="group rounded-xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
           <div className="flex items-start gap-4">
             <div className="w-1 h-24 bg-gradient-to-b from-primary to-primary/50 rounded-full group-hover:h-28 transition-all duration-300"></div>
