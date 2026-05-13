@@ -74,8 +74,16 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,#ffffff_0%,var(--light-gray)_52%,#e8edf2_100%)] text-secondary">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_0%,transparent_42%,rgba(31,58,95,0.09)_63%,rgba(58,58,58,0.08)_100%)]" />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-primary/2 to-white text-secondary">
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-overlay" 
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 30%, rgba(27, 58, 95, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(42, 42, 42, 0.06) 0%, transparent 40%),
+            radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.04) 0%, transparent 50%)
+          `
+        }}
+      />
 
       <Header />
 

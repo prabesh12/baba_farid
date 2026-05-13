@@ -11,31 +11,68 @@ type TapRevealSliderProps = {
 
 export default function TapRevealSlider({ before, after, title }: TapRevealSliderProps) {
   const [split, setSplit] = useState(50);
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-secondary/20 bg-white shadow-sm">
-      <div className="relative w-full select-none" style={{ paddingBottom: "75%" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${before})` }} aria-label={`${title} before photo`} />
+    <article className="group overflow-hidden rounded-xl border border-primary/15 bg-white shadow-lg hover:shadow-2xl hover:border-primary/40 transition-all duration-300">
+      <div
+        className="relative w-full select-none cursor-ew-resize"
+        style={{ paddingBottom: "75%" }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {/* Before Image */}
         <div
-          className="absolute inset-y-0 left-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${before})` }}
+          aria-label={`${title} before photo`}
+        />
+
+        {/* After Image */}
+        <div
+          className="absolute inset-y-0 left-0 bg-cover bg-center transition-all duration-100"
           style={{ width: `${split}%`, backgroundImage: `url(${after})` }}
           aria-label={`${title} after photo`}
         />
 
-        <div className="absolute left-3 top-3 rounded bg-black/55 px-2 py-1 text-xs font-bold uppercase tracking-widest text-white">Before</div>
-        <div className="absolute right-3 top-3 rounded bg-black/55 px-2 py-1 text-xs font-bold uppercase tracking-widest text-white">After</div>
+        {/* Label Background Gradient */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+        {/* Before/After Labels */}
+        <motion.div
+          className="absolute left-3 top-3 rounded-lg bg-gradient-to-r from-primary/90 to-primary/70 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-on-primary backdrop-blur-sm"
+          animate={{ scale: split < 25 ? 1.1 : 1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+        >
+          Before
+        </motion.div>
 
         <motion.div
-          className="pointer-events-none absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_0_1px_rgba(0,0,0,0.25)]"
+          className="absolute right-3 top-3 rounded-lg bg-gradient-to-r from-primary/70 to-primary/90 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-on-primary backdrop-blur-sm"
+          animate={{ scale: split > 75 ? 1.1 : 1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+        >
+          After
+        </motion.div>
+
+        {/* Slider Divider */}
+        <motion.div
+          className="pointer-events-none absolute inset-y-0 w-1 bg-gradient-to-b from-transparent via-white to-transparent shadow-lg"
           style={{ left: `${split}%` }}
           animate={{ left: `${split}%` }}
           transition={{ type: "spring", stiffness: 280, damping: 28 }}
         >
-          <div className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/80 bg-primary text-on-primary shadow-lg">
-            <span className="text-sm leading-none">↔</span>
-          </div>
+          {/* Control Handle */}
+          <motion.div
+            className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-gradient-to-r from-primary to-primary/80 text-on-primary shadow-2xl"
+            animate={{ scale: isHovering ? 1.2 : 1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          >
+            <span className="text-base font-bold leading-none">⟨⟩</span>
+          </motion.div>
         </motion.div>
 
+        {/* Invisible Slider Input */}
         <input
           type="range"
           min={0}
@@ -47,9 +84,14 @@ export default function TapRevealSlider({ before, after, title }: TapRevealSlide
         />
       </div>
 
-      <div className="border-t border-secondary/15 px-4 py-3">
-        <p className="font-semibold text-primary">{title}</p>
-        <p className="text-sm text-secondary">Drag slider to compare before and after</p>
+      {/* Card Footer */}
+      <div className="border-t border-primary/10 bg-gradient-to-r from-white to-primary/2 px-5 py-4 group-hover:bg-primary/5 transition-colors duration-300">
+        <h3 className="font-heading text-lg font-bold text-primary group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-primary/70 transition-all duration-300">
+          {title}
+        </h3>
+        <p className="text-xs text-secondary/60 mt-1 group-hover:text-secondary/80 transition-colors duration-300">
+          Drag to compare before and after
+        </p>
       </div>
     </article>
   );
