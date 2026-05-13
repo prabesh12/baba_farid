@@ -10,81 +10,87 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const navLinks = [
+    { label: "Services", href: "#services" },
+    { label: "Reviews", href: "#reviews" },
+    { label: "Feedback", href: "#feedback" },
+    { label: "Projects", href: "#projects" },
+    { label: "FAQ", href: "#faq" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-secondary/20 bg-surface/90 backdrop-blur">
-      <div className="flex w-full items-center gap-6 px-4 py-4 sm:px-8">
-        <a href="#home" className="flex items-center gap-3 font-heading text-2xl uppercase tracking-widest">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-white/95 backdrop-blur-md shadow-sm">
+      <div className="flex w-full items-center gap-6 px-4 py-3 sm:px-8">
+        <a href="#home" className="group flex items-center gap-3 font-heading text-xl uppercase tracking-wider">
           <Image
             src="/Logo.jpeg"
-            alt="Baba Farid Roofing logo"
+            alt="Baba Faarid Roofing logo"
             width={56}
             height={56}
             quality={100}
             sizes="56px"
-            className="h-14 w-14 rounded-md object-cover shadow-sm ring-1 ring-secondary/20"
+            className="h-12 w-12 rounded-lg object-cover shadow-md ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all"
             priority
           />
-          <span className="font-bold text-primary">Baba Farid Roofing</span>
+          <span className="font-bold text-primary hidden sm:block">Baba Faarid</span>
         </a>
+
+        {/* Desktop Navigation */}
+        <nav className="ml-auto hidden flex-1 flex-wrap items-center justify-end gap-x-8 gap-y-2 text-xs font-bold uppercase tracking-wide sm:text-sm lg:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="relative text-secondary hover:text-primary after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#enquiry"
+            className="rounded-full bg-gradient-to-r from-primary to-primary/80 px-6 py-2.5 text-on-primary hover:shadow-lg hover:shadow-primary/30 hover:scale-105 font-bold transition-all"
+          >
+            Free Quote
+          </a>
+        </nav>
+
+        {/* Mobile Menu Button */}
         <button
           type="button"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
           aria-label="Toggle navigation menu"
-          className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-secondary/20 text-primary transition hover:border-primary/40 hover:bg-primary/5 lg:hidden"
+          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/20 text-primary hover:bg-primary/10 lg:hidden transition-colors"
           onClick={() => setIsMenuOpen((open) => !open)}
         >
           <span className="flex flex-col gap-1.5">
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
+            <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </span>
         </button>
-        <nav className="ml-auto hidden flex-1 flex-wrap items-center justify-end gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide sm:text-sm lg:flex lg:gap-x-8">
-          <a href="#services" className="hover:text-primary">
-            Services
-          </a>
-          <a href="#reviews" className="hover:text-primary">
-            Reviews
-          </a>
-          <a href="#feedback" className="hover:text-primary">
-            Feedback
-          </a>
-          <a href="#projects" className="hover:text-primary">
-            Projects
-          </a>
-          <a href="#faq" className="hover:text-primary">
-            FAQ
-          </a>
-          <a href="#enquiry" className="rounded-full bg-primary px-4 py-2 text-on-primary hover:bg-primary/90">
-            Free Quote
-          </a>
-        </nav>
       </div>
+
+      {/* Mobile Navigation */}
       {isMenuOpen ? (
         <nav
           id="mobile-nav"
-          className="border-t border-secondary/10 px-4 py-4 lg:hidden"
+          className="border-t border-primary/10 bg-white/98 backdrop-blur px-4 py-4 animate-in fade-in slide-in-from-top-2 duration-300 lg:hidden"
         >
-          <div className="flex flex-col gap-3 text-sm font-bold uppercase tracking-wide">
-            <a href="#services" className="hover:text-primary" onClick={closeMenu}>
-              Services
-            </a>
-            <a href="#reviews" className="hover:text-primary" onClick={closeMenu}>
-              Reviews
-            </a>
-            <a href="#feedback" className="hover:text-primary" onClick={closeMenu}>
-              Feedback
-            </a>
-            <a href="#projects" className="hover:text-primary" onClick={closeMenu}>
-              Projects
-            </a>
-            <a href="#faq" className="hover:text-primary" onClick={closeMenu}>
-              FAQ
-            </a>
+          <div className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-4 py-2 text-sm font-bold uppercase tracking-wide text-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                onClick={closeMenu}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
               href="#enquiry"
-              className="mt-1 inline-flex w-fit rounded-full bg-primary px-4 py-2 text-on-primary hover:bg-primary/90"
+              className="mt-2 rounded-lg bg-gradient-to-r from-primary to-primary/80 px-4 py-2.5 text-center text-sm font-bold uppercase text-on-primary hover:shadow-lg hover:shadow-primary/30 transition-all"
               onClick={closeMenu}
             >
               Free Quote

@@ -4,79 +4,111 @@ export default function HeroSection() {
   const emailUrl = "mailto:aman@babafaridroofing.com";
 
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.08fr_0.92fr] md:py-20">
-      <div className="space-y-6">
-        <p className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-          Local and Trusted Roofers
-        </p>
-        <h1 className="font-heading text-5xl leading-[0.95] text-secondary md:text-5xl">
+    <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:py-16 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+      <div className="space-y-8">
+        <div className="space-y-1 animate-in fade-in slide-in-from-left-4 duration-700">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/8 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary hover:bg-primary/12 transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Local and Trusted Roofers
+          </p>
+        </div>
+
+        <h1 className="font-heading text-6xl md:text-7xl leading-tight text-secondary animate-in fade-in slide-in-from-left-4 duration-700 delay-100">
           Strong Roofing
           <br />
-          Better First Impression
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Better First Impression</span>
         </h1>
-        <p className="max-w-xl text-lg leading-relaxed text-secondary">
-          Baba Farid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
+
+        <p className="max-w-xl text-lg leading-relaxed text-secondary/80 animate-in fade-in slide-in-from-left-4 duration-700 delay-200">
+          Baba Faarid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
         </p>
-        <ul className="space-y-3 text-lg font-semibold text-secondary">
-          <li>Free quotes and site inspections</li>
-          <li>Quality workmanship on every job</li>
-          <li>Trusted local roofers for Sydney homes</li>
+
+        <ul className="space-y-3 text-base font-semibold text-secondary/70 animate-in fade-in slide-in-from-left-4 duration-700 delay-300">
+          {["Free quotes and site inspections", "Quality workmanship on every job", "Trusted local roofers for Sydney homes"].map((item, idx) => (
+            <li key={item} className="flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-primary to-primary/70"></span>
+              {item}
+            </li>
+          ))}
         </ul>
+
         <a
           href={phoneUrl}
-          className="block rounded-xl bg-primary px-5 py-4 text-center text-xl font-bold uppercase tracking-wider text-on-primary md:text-2xl"
+          className="block rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 md:px-6 md:py-4 text-center text-sm md:text-lg font-bold uppercase tracking-wider text-on-primary hover:shadow-2xl hover:shadow-primary/40 hover:scale-105 transition-all animate-in fade-in slide-in-from-left-4 duration-700 delay-400 group"
         >
-          Call Today For A Free Quote: 0468 302 786
+          <span className="inline-flex items-center gap-2">
+            Call Now: 0468 302 786
+            <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
+          </span>
         </a>
       </div>
 
-      <div className="rounded-3xl border border-secondary/20 bg-surface/90 p-6 shadow-xl">
-        <p className="font-heading text-3xl uppercase tracking-wide text-primary">Fast Quotes. Clean Work. Real Results.</p>
-        <p className="mt-4 text-secondary">
-          We handle roof restoration plus installation of gutters, fascia, whirlybird, skylight, gutter guards, and solar mesh with a focus on quality and durability.
-        </p>
-        <div className="mt-6 space-y-3 text-sm">
-          <p>
-            <strong>Email:</strong>{" "}
-            <a href={emailUrl} className="underline decoration-primary/40 underline-offset-4 hover:text-primary">
-              aman@babafaridroofing.com
-            </a>
+      <div className="group rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 to-primary/2 p-8 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all animate-in fade-in slide-in-from-right-4 duration-700 delay-200">
+        <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+        
+        <div className="relative">
+          <div className="mb-2 h-1 w-12 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+          
+          <p className="font-heading text-4xl md:text-3xl uppercase tracking-tight text-primary mb-4">
+            Fast Quotes. Clean Work. Real Results.
           </p>
-          <p>
-            <strong>Address:</strong>{" "}
-            <a href={mapsUrl} target="_blank" rel="noreferrer" className="underline decoration-primary/40 underline-offset-4 hover:text-primary">
-              136 Fairwater boulevard, Blacktown, NSW 2148
-            </a>
+
+          <p className="text-secondary/80 leading-relaxed mb-8">
+            We handle roof restoration plus installation of gutters, fascia, whirlybird, skylight, gutter guards, and solar mesh with a focus on quality and durability.
           </p>
-          <p>
-            <strong>Phone:</strong>{" "}
-            <a href={phoneUrl} className="underline decoration-primary/40 underline-offset-4 hover:text-primary">
-              0468 302 786
+
+          <div className="space-y-3 mb-6 text-sm">
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Email</p>
+              <a href={emailUrl} className="text-primary hover:text-primary/80 transition-colors text-sm">
+                aman@babafaridroofing.com
+              </a>
+            </div>
+
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Phone</p>
+              <a href={phoneUrl} className="text-primary hover:text-primary/80 transition-colors font-semibold text-sm">
+                0468 302 786
+              </a>
+            </div>
+
+            <div className="group/item hover:bg-primary/5 p-2 rounded-lg transition-colors">
+              <p className="font-semibold text-secondary text-xs">Address</p>
+              <a href={mapsUrl} target="_blank" rel="noreferrer" className="text-primary hover:text-primary/80 transition-colors text-xs leading-relaxed">
+                136 Fairwater Boulevard, Blacktown, NSW 2148
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/61468302786"
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 rounded-lg bg-primary px-4 py-2 text-center text-xs font-bold text-on-primary hover:bg-primary/90 hover:shadow-lg transition-all hover:scale-105"
+            >
+              WhatsApp
             </a>
-          </p>
-        </div>
-        <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-          <a href="https://wa.me/61468302786" target="_blank" rel="noreferrer" className="rounded-full bg-primary px-4 py-2 text-on-primary hover:bg-primary/90">
-            WhatsApp Chat
-          </a>
-          <a
-            href="https://www.facebook.com/share/18arkCBimh/?mibextid=wwXIfr"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-secondary px-4 py-2 hover:bg-secondary hover:text-on-primary"
-          >
-            Facebook
-          </a>
-          <a
-            href="https://www.instagram.com/babafarid__roofing?igsh=YngweGhzenY5cHFk&utm_source=qr"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-secondary px-4 py-2 hover:bg-secondary hover:text-on-primary"
-          >
-            Instagram
-          </a>
+            <a
+              href="https://www.facebook.com/share/18arkCBimh/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 rounded-lg border border-primary/30 px-4 py-2 text-center text-xs font-bold text-primary hover:bg-primary/10 transition-all"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/babafarid__roofing?igsh=YngweGhzenY5cHFk&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 rounded-lg border border-primary/30 px-4 py-2 text-center text-xs font-bold text-primary hover:bg-primary/10 transition-all"
+            >
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
+
     </section>
   );
 }

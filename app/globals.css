@@ -1,25 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --light-gray: #f5f5f5;
-  --dark-gray: #3a3a3a;
-  --dark-blue: #1f3a5f;
-  --background: var(--light-gray);
-  --foreground: var(--dark-gray);
+  /* Primary Brand Colors - from Baba Farid Logo */
+  --navy-primary: #1b3a5f;
+  --charcoal-dark: #2a2a2a;
+  --charcoal-light: #4a4a4a;
+  
+  /* Neutral Colors */
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e5e7eb;
+  --dark-gray: #6b7280;
+  
+  /* Accent Color */
+  --accent-blue: #0ea5e9;
+  
+  /* Semantic Tokens */
+  --background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+  --background-dark: linear-gradient(135deg, #0f2239 0%, #1a3a52 100%);
+  --foreground: var(--charcoal-dark);
+  --text-light: var(--dark-gray);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--dark-blue);
-  --color-secondary: var(--dark-gray);
+  --color-background: var(--white);
+  --color-foreground: var(--charcoal-dark);
+  --color-primary: var(--navy-primary);
+  --color-secondary: var(--charcoal-dark);
+  --color-accent: var(--accent-blue);
   --color-surface: var(--light-gray);
-  --color-on-primary: var(--light-gray);
+  --color-surface-dark: #1a2940;
+  --color-on-primary: var(--white);
   --font-sans: var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background: var(--light-gray);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
 }
@@ -30,30 +50,87 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.28;
+  opacity: 0.15;
   background-image:
-    radial-gradient(circle at 18% 22%, rgba(31, 58, 95, 0.12) 0 2px, transparent 2px),
-    radial-gradient(circle at 82% 78%, rgba(58, 58, 58, 0.12) 0 2px, transparent 2px);
-  background-size: 30px 30px, 36px 36px;
+    radial-gradient(circle at 18% 22%, rgba(27, 58, 95, 0.15) 0 3px, transparent 3px),
+    radial-gradient(circle at 82% 78%, rgba(42, 42, 42, 0.1) 0 3px, transparent 3px),
+    radial-gradient(circle at 40% 60%, rgba(14, 165, 233, 0.05) 0 4px, transparent 4px);
+  background-size: 40px 40px, 50px 50px, 60px 60px;
 }
 
 .font-heading {
   font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.02em;
 }
 
+/* Smooth Transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button,
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations */
 section,
-article,
+article {
+  animation: fade-up 0.6s ease-out both;
+}
+
 header {
-  animation: fade-up 0.7s ease both;
+  animation: slide-down 0.5s ease-out both;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(27, 58, 95, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(27, 58, 95, 0.5);
   }
 }
