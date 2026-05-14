@@ -21,8 +21,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-primary/10 bg-gradient-to-b from-white to-primary/5">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+    <footer className="border-t border-primary/10 bg-white/100">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12">
         {/* Top Section */}
         <div className="grid gap-8 md:grid-cols-4 mb-12">
           {/* Brand */}
@@ -31,10 +31,9 @@ export default function Footer() {
               <Image
                 src="/Logo.jpeg"
                 alt="Baba Faarid Roofing logo"
-                width={48}
-                height={48}
-                quality={100}
-                className="h-10 w-10 rounded-lg object-cover"
+                width={200}
+                height={200}
+                className="rounded-lg object-cover w-20 h-20"
               />
               <div>
                 <p className="font-heading font-bold text-primary">Baba Faarid</p>

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 type WhyChooseUsSectionProps = {
   restorationProcess: string[];
   installationProcess: string[];
@@ -12,24 +16,42 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
   ];
 
   return (
-    <section id="process" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-12 md:py-16">
+    <section id="process" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-6 md:py-12">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="space-y-3 mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-3 mb-8"
+        >
           <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Choose Us</span>
           </h2>
           <p className="text-lg text-secondary/70 max-w-2xl leading-relaxed">
             Customers choose Baba Faarid Roofing for simple quotes, reliable scheduling, quality workmanship, and a clean finish on every project.
           </p>
-        </div>
+        </motion.div>
 
         {/* Reasons Grid */}
         <div className="grid gap-6 lg:grid-cols-2 mb-8">
           {reasons.map((reason, idx) => (
-            <article
+            <motion.article
               key={reason.title}
-              style={{ animationDelay: `${idx * 100}ms` }}
-              className="group relative overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 animate-in fade-in slide-in-from-bottom-4 duration-700"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ 
+                y: -5,
+                scale: 1.01,
+                boxShadow: "0 15px 25px -5px rgb(0 0 0 / 0.1)"
+              }}
+              transition={{ 
+                duration: 0.5, 
+                delay: idx * 0.1,
+                y: { type: "spring", stiffness: 400, damping: 25 }
+              }}
+              className="group relative overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white p-6 shadow-sm transition-[border-color,background-color] duration-300 hover:border-primary/40 will-change-transform cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -mr-2 -mt-2"></div>
 
@@ -44,7 +66,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
                   {reason.desc}
                 </p>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
@@ -54,10 +76,18 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
             { title: "Restoration Process", steps: restorationProcess },
             { title: "Installation Process", steps: installationProcess },
           ].map((section, idx) => (
-            <article
+            <motion.article
               key={section.title}
-              style={{ animationDelay: `${(4 + idx) * 100}ms` }}
-              className="group overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 animate-in fade-in slide-in-from-bottom-4 duration-700"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: (4 + idx) * 0.1,
+                y: { type: "spring", stiffness: 300, damping: 20 }
+              }}
+              className="group overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white shadow-sm hover:shadow-lg transition-[border-color,background-color] duration-300 hover:border-primary/40"
             >
               <div className="h-1 w-full bg-gradient-to-r from-primary via-primary/50 to-accent/0"></div>
 
@@ -83,7 +113,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
                   ))}
                 </ol>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

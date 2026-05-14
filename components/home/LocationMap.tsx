@@ -2,7 +2,7 @@
 
 export default function LocationMap() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section className="mx-auto w-full max-w-6xl px-6 py-12">
       <div className="space-y-3 mb-8">
         <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
           Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Location</span>
@@ -17,7 +17,7 @@ export default function LocationMap() {
         <div className="space-y-6">
           <div className="group rounded-xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
             <h3 className="font-heading text-2xl font-bold text-primary mb-4">Baba Faarid Roofing</h3>
-            
+
             <div className="space-y-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-widest text-secondary/60 mb-1">Address</p>

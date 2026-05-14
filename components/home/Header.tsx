@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Logo from '@/public/Logo.jpeg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,16 +24,14 @@ export default function Header() {
       <div className="flex w-full items-center gap-6 px-4 py-3 sm:px-8">
         <a href="#home" className="group flex items-center gap-3 font-heading text-xl uppercase tracking-wider">
           <Image
-            src="/Logo.jpeg"
+            src={Logo}
             alt="Baba Faarid Roofing logo"
-            width={56}
-            height={56}
-            quality={100}
-            sizes="56px"
-            className="h-12 w-12 rounded-lg object-cover shadow-md ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all"
+            width={112}
+            height={112}
             priority
+            className="rounded-sm object-cover w-14 h-14"
           />
-          <span className="font-bold text-primary hidden sm:block">Baba Faarid</span>
+          <span className="font-bold text-primary hidden sm:block">Baba Faarid Roofing</span>
         </a>
 
         {/* Desktop Navigation */}

@@ -8,7 +8,7 @@ type FeedbackSectionProps = {
 
 export default function FeedbackSection({ services, onSubmit }: FeedbackSectionProps) {
   return (
-    <section id="feedback" className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+    <section id="feedback" className="mx-auto w-full max-w-6xl px-6 py-6 md:py-12">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
         {/* Left Column - Content */}
         <div className="space-y-6">

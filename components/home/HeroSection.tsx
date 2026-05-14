@@ -4,7 +4,7 @@ export default function HeroSection() {
   const emailUrl = "mailto:aman@babafaridroofing.com";
 
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:py-16 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+    <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-6 md:py-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
       <div className="space-y-8">
         <div className="space-y-1 animate-in fade-in slide-in-from-left-4 duration-700">
           <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/8 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary hover:bg-primary/12 transition-colors">
@@ -45,10 +45,10 @@ export default function HeroSection() {
 
       <div className="group rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 to-primary/2 p-8 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all animate-in fade-in slide-in-from-right-4 duration-700 delay-200">
         <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
-        
+
         <div className="relative">
           <div className="mb-2 h-1 w-12 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-          
+
           <p className="font-heading text-4xl md:text-3xl uppercase tracking-tight text-primary mb-4">
             Fast Quotes. Clean Work. Real Results.
           </p>

@@ -31,8 +31,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
   return (
     <div
-      className="group relative w-full overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-lg"
-      style={{ paddingBottom: "50%" }}
+      className="group relative w-full overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-lg aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9]"
       onMouseEnter={() => setIsAutoPlay(false)}
       onMouseLeave={() => setIsAutoPlay(true)}
     >

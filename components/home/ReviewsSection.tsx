@@ -27,7 +27,7 @@ export default function ReviewsSection({ serviceReviews }: ReviewsSectionProps) 
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {serviceReviews.length === 0 ? (
-            <div className="col-span-full text-center py-12">
+            <div className="col-span-full text-center py-6">
               <p className="text-secondary/60 text-lg">No reviews yet. Be the first to share your experience!</p>
             </div>
           ) : (
@@ -35,7 +35,7 @@ export default function ReviewsSection({ serviceReviews }: ReviewsSectionProps) 
               <article
                 key={`${item.name}-${idx}`}
                 style={{ animationDelay: `${idx * 100}ms` }}
-                className="group relative overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 animate-in fade-in scale-95 duration-700"
+                className="group relative overflow-hidden rounded-xl border border-primary/15 bg-white hover:bg-gradient-to-br hover:from-primary/5 hover:to-white p-6 shadow-sm hover:shadow-lg transition-[transform,shadow,border-color,background-color] duration-300 hover:border-primary/40 hover:-translate-y-1 will-change-transform"
               >
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 transition-opacity duration-300 pointer-events-none"></div>
@@ -60,9 +60,8 @@ export default function ReviewsSection({ serviceReviews }: ReviewsSectionProps) 
                       {[...Array(5)].map((_, i) => (
                         <span
                           key={i}
-                          className={`text-lg transition-all duration-300 ${
-                            i < (item.rating || 0) ? 'text-primary group-hover:scale-125' : 'text-secondary/20'
-                          }`}
+                          className={`text-lg transition-all duration-300 ${i < (item.rating || 0) ? 'text-primary group-hover:scale-125' : 'text-secondary/20'
+                            }`}
                           style={{ transitionDelay: `${i * 50}ms` }}
                         >
                           ★

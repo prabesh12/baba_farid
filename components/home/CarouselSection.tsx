@@ -7,7 +7,7 @@ type CarouselSectionProps = {
 
 export default function CarouselSection({ portfolio }: CarouselSectionProps) {
   return (
-    <section className="w-full bg-white">
+    <section className="mx-auto w-full max-w-6xl bg-white px-6 pt-24 pb-6 md:px-8 md:pt-28 md:pb-8">
       <ImageCarousel
         images={portfolio.map((item) => ({
           src: item.after,

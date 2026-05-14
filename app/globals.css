@@ -63,20 +63,18 @@ body::before {
   letter-spacing: -0.02em;
 }
 
-/* Smooth Transitions */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
+/* Optimized Transitions */
 button,
-a {
+a,
+.transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animations */
-section,
-article {
-  animation: fade-up 0.6s ease-out both;
+/* Entrance Animations - using will-change for performance */
+section:not(.no-css-animate),
+article:not(.no-css-animate) {
+  animation: fade-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  will-change: transform, opacity;
 }
 
 header {

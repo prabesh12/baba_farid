@@ -14,7 +14,7 @@ export default function TapRevealSlider({ before, after, title }: TapRevealSlide
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <article className="group overflow-hidden rounded-xl border border-primary/15 bg-white shadow-lg hover:shadow-2xl hover:border-primary/40 transition-all duration-300">
+    <article className="group overflow-hidden rounded-xl border border-primary/15 bg-white shadow-lg hover:shadow-2xl hover:border-primary/40 transition-[shadow,border-color] duration-300">
       <div
         className="relative w-full select-none cursor-ew-resize"
         style={{ paddingBottom: "75%" }}
@@ -30,7 +30,7 @@ export default function TapRevealSlider({ before, after, title }: TapRevealSlide
 
         {/* After Image */}
         <div
-          className="absolute inset-y-0 left-0 bg-cover bg-center transition-all duration-100"
+          className="absolute inset-y-0 left-0 bg-cover bg-center"
           style={{ width: `${split}%`, backgroundImage: `url(${after})` }}
           aria-label={`${title} after photo`}
         />
@@ -60,7 +60,7 @@ export default function TapRevealSlider({ before, after, title }: TapRevealSlide
           className="pointer-events-none absolute inset-y-0 w-1 bg-gradient-to-b from-transparent via-white to-transparent shadow-lg"
           style={{ left: `${split}%` }}
           animate={{ left: `${split}%` }}
-          transition={{ type: "spring", stiffness: 280, damping: 28 }}
+          transition={{ type: "spring", stiffness: 500, damping: 40 }}
         >
           {/* Control Handle */}
           <motion.div
