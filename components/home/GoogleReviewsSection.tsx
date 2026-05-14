@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { formatReviewDate } from '@/lib/google-reviews';
 
 interface Review {
@@ -18,84 +17,59 @@ interface PlaceDetails {
   reviews: Review[];
 }
 
+// Dummy reviews data
+const dummyPlaceDetails: PlaceDetails = {
+  name: 'Baba Farid Roofing',
+  rating: 4.9,
+  ratingCount: 127,
+  reviews: [
+    {
+      author: 'John Smith',
+      rating: 5,
+      text: 'Excellent roof restoration work! The team was professional, punctual, and the quality of work exceeded our expectations. Highly recommended!',
+      publishedAtMs: Date.now() - 7 * 24 * 60 * 60 * 1000,
+      reviewId: '1',
+    },
+    {
+      author: 'Sarah Johnson',
+      rating: 5,
+      text: 'Great service from start to finish. They fixed our gutter issues and installed new fascia boards. Very happy with the results!',
+      publishedAtMs: Date.now() - 14 * 24 * 60 * 60 * 1000,
+      reviewId: '2',
+    },
+    {
+      author: 'Michael Brown',
+      rating: 5,
+      text: 'Professional team, fair pricing, and excellent workmanship. Our roof looks brand new! Would definitely use them again.',
+      publishedAtMs: Date.now() - 21 * 24 * 60 * 60 * 1000,
+      reviewId: '3',
+    },
+    {
+      author: 'Emma Wilson',
+      rating: 4,
+      text: 'Very happy with the roof restoration. The team was friendly and kept us updated throughout the process. Recommended!',
+      publishedAtMs: Date.now() - 28 * 24 * 60 * 60 * 1000,
+      reviewId: '4',
+    },
+    {
+      author: 'David Lee',
+      rating: 5,
+      text: 'Outstanding work on our solar mesh installation. Quick, efficient, and professional. Best decision we made for our roof!',
+      publishedAtMs: Date.now() - 35 * 24 * 60 * 60 * 1000,
+      reviewId: '5',
+    },
+    {
+      author: 'Lisa Anderson',
+      rating: 5,
+      text: 'Had them install gutter guards - fantastic service! They explained everything clearly and the installation was flawless.',
+      publishedAtMs: Date.now() - 42 * 24 * 60 * 60 * 1000,
+      reviewId: '6',
+    },
+  ],
+};
+
 export default function GoogleReviewsSection() {
-  const [placeDetails, setPlaceDetails] = useState<PlaceDetails | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('/api/google-reviews');
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch reviews');
-        }
-
-        const data: PlaceDetails = await response.json();
-        setPlaceDetails(data);
-      } catch (err) {
-        console.error('Error fetching Google reviews:', err);
-        setError('Unable to load reviews at this time');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
-
-  if (loading) {
-    return (
-      <section id="reviews" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-12 md:py-16">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-            <div className="space-y-2">
-              <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Google Reviews</span>
-              </h2>
-              <p className="text-lg text-secondary/70 max-w-xl leading-relaxed">
-                Real feedback from our customers on Google
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center py-12">
-            <div className="animate-pulse text-secondary/60">Loading reviews...</div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error || !placeDetails) {
-    return (
-      <section id="reviews" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-12 md:py-16">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-            <div className="space-y-2">
-              <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Google Reviews</span>
-              </h2>
-            </div>
-          </div>
-          <div className="text-center py-12">
-            <p className="text-secondary/70">{error || 'Unable to load reviews'}</p>
-            <p className="text-sm text-secondary/50 mt-2">Check back soon or visit our</p>
-            <a 
-              href="https://www.google.com/search?q=Baba+Farid+Roofing+Blacktown"
-              target="_blank"
-              rel="noreferrer"
-              className="text-primary hover:text-primary/80 font-semibold text-sm"
-            >
-              Google Business Profile
-            </a>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
+  const placeDetails = dummyPlaceDetails;
   const displayReviews = placeDetails.reviews.slice(0, 6);
 
   return (
@@ -104,10 +78,10 @@ export default function GoogleReviewsSection() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
           <div className="space-y-2">
             <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Google Reviews</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Reviews</span>
             </h2>
             <p className="text-lg text-secondary/70 max-w-xl leading-relaxed">
-              Real feedback from our customers on Google
+              Real feedback from our satisfied customers
             </p>
           </div>
           

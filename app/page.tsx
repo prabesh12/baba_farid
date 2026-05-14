@@ -8,7 +8,6 @@ import {
   Footer,
   Header,
   HeroSection,
-  LocationMap,
   ProjectsSection,
   GoogleReviewsSection,
   ServiceAreasSection,
@@ -53,7 +52,6 @@ export default function Home() {
 
         <FaqSection faqs={faqs} />
         <EnquirySection services={services} />
-        <LocationMap />
       </main>
 
       <FloatingActionButtons />

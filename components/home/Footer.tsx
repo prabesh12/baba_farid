@@ -6,6 +6,7 @@ export default function Footer() {
   const phoneUrl = "tel:+61468302786";
   const emailUrl = "mailto:aman@babafaridroofing.com";
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=136+Fairwater+Boulevard,+Blacktown,+NSW+2148";
+  const mapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.4689486445277!2d150.90698!3d-33.77169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a26f8e1f1f1f%3A0x1f1f1f1f1f1f1f1f!2s136%20Fairwater%20Boulevard%2C%20Blacktown%20NSW%202148!5e0!3m2!1sen!2sau!4v1234567890";
 
   const quickLinks = [
     { label: "Services", href: "#services" },
@@ -22,6 +23,28 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-primary/10 bg-white/100">
+      {/* Map Section */}
+      <div className="mx-auto w-full max-w-6xl px-6 py-12">
+        <h3 className="font-heading text-3xl md:text-4xl uppercase tracking-tight text-secondary mb-6">
+          Find <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Us</span>
+        </h3>
+        <div className="group rounded-xl overflow-hidden border border-primary/15 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/40">
+          <iframe
+            src={mapsEmbedUrl}
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full"
+          />
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
         {/* Top Section */}
         <div className="grid gap-8 md:grid-cols-4 mb-12">
@@ -107,12 +130,15 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           {/* Copyright */}
-          <div className="space-y-1">
+          <div className="space-y-2">
             <p className="text-xs text-secondary/60">
               © {currentYear} Baba Faarid Roofing. All rights reserved.
             </p>
             <p className="text-xs text-secondary/50">
               Professional Roofing Services | NSW-Licensed | Free Quotes Available
+            </p>
+            <p className="text-xs text-secondary/50">
+              Developed by <a href="https://logicminers.com" target="_blank" rel="noreferrer" className="text-primary hover:text-primary/80 transition-colors">Logic Miners</a>
             </p>
           </div>
 
