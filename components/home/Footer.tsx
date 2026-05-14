@@ -52,14 +52,17 @@ export default function Footer() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <Image
-                src="/Logo.jpeg"
-                alt="Baba Faarid Roofing logo"
-                width={200}
-                height={200}
-                className="rounded-lg object-cover w-20 h-20"
+                src="/logo.png"
+                alt="Baba Farid Roofing logo"
+                width={300}
+                height={300}
+                quality={100}
+                priority
+                className="h-30 w-30 object-contain"
+
               />
               <div>
-                <p className="font-heading font-bold text-primary">Baba Faarid</p>
+                <p className="font-heading font-bold text-primary">Baba Farid</p>
                 <p className="text-xs text-secondary/60">Roof Restoration</p>
               </div>
             </div>
@@ -132,7 +135,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="space-y-2">
             <p className="text-xs text-secondary/60">
-              © {currentYear} Baba Faarid Roofing. All rights reserved.
+              © {currentYear} Baba Farid Roofing. All rights reserved.
             </p>
             <p className="text-xs text-secondary/50">
               Professional Roofing Services | NSW-Licensed | Free Quotes Available

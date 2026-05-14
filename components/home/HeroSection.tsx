@@ -2,7 +2,7 @@ export default function HeroSection() {
   const phoneUrl = "tel:+61468302786";
 
   return (
-    <section 
+    <section
       className="relative w-full min-h-[600px] md:min-h-[700px] bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: 'url(https://babafaridroofing.linearwebsolutions.com.au/images/gallery2.jpg)',
@@ -10,7 +10,7 @@ export default function HeroSection() {
     >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
-      
+
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 h-full flex flex-col justify-center items-start py-12 md:py-24">
         <div className="space-y-8 max-w-2xl animate-in fade-in slide-in-from-left-4 duration-700">
@@ -31,7 +31,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-lg leading-relaxed text-white/90 max-w-xl">
-            Baba Faarid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
+            Baba Farid Roofing helps homeowners improve roof strength, street appeal, and long-term protection with restoration and complete roofline installations.
           </p>
 
           {/* Features List */}

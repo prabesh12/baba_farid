@@ -38,24 +38,20 @@ export default function Home() {
       />
 
       <Header />
-
+      <div className="h-[80px] md:h-[96px]" />
+      <HeroSection />
       <CarouselSection portfolio={portfolio} />
-
       <main id="home" className="relative z-10 pt-2">
-        <HeroSection />
+        <AboutSection />
         <ServicesSection services={services} />
         <ProjectsSection portfolio={portfolio} />
         <WhyChooseUsSection restorationProcess={restorationProcess} installationProcess={installationProcess} />
         <ServiceAreasSection serviceAreas={serviceAreas} />
-        <AboutSection />
         <GoogleReviewsSection />
-
         <FaqSection faqs={faqs} />
         <EnquirySection services={services} />
       </main>
-
       <FloatingActionButtons />
-
       <Footer />
     </div>
   );

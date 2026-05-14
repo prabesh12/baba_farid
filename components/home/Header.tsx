@@ -18,16 +18,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-white/95 backdrop-blur-md shadow-sm">
-      <div className="flex w-full items-center gap-4 px-4 py-2 sm:gap-6 sm:px-8 sm:py-3 md:py-4">
-        <a href="#home" className="group flex-shrink-0 transition-transform hover:scale-105">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-white/100 backdrop-blur-md shadow-sm">
+      <div className="flex w-full items-center gap-4 px-4 sm:gap-6 sm:px-8">
+        <a href="#" className="group">
           <Image
             src="/logo.png"
-            alt="Baba Faarid Roofing logo"
-            width={80}
-            height={80}
+            alt="Baba Farid Roofing logo"
+            width={250}
+            height={250}
+            quality={100}
             priority
-            className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            className="h-25 w-25 object-contain"
+
           />
         </a>
 
