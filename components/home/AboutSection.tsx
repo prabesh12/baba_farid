@@ -7,7 +7,8 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="mx-auto w-full max-w-6xl px-6 py-6 md:py-12">
+    <section id="about" className="w-full bg-white py-16 md:py-24 border-b border-primary/5">
+      <div className="mx-auto w-full max-w-6xl px-6">
       <div className="space-y-3 mb-8">
         <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-tight text-secondary">
           About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Baba Farid Roofing</span>
@@ -60,6 +61,7 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

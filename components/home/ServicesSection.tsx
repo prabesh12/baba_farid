@@ -9,7 +9,8 @@ type ServicesSectionProps = {
 
 export default function ServicesSection({ services }: ServicesSectionProps) {
   return (
-    <section id="services" className="no-css-animate mx-auto w-full max-w-6xl px-6 py-6 md:py-12">
+    <section id="services" className="no-css-animate w-full bg-slate-50 py-16 md:py-24 border-b border-primary/5">
+      <div className="mx-auto w-full max-w-6xl px-6">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,6 +68,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
             <div className="mt-4 h-1 w-0 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300 rounded-full"></div>
           </motion.article>
         ))}
+      </div>
       </div>
     </section>
   );
