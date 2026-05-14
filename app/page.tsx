@@ -25,6 +25,7 @@ import {
   services,
 } from "../components/home/constants";
 
+export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-primary/2 to-white text-secondary">
       <div className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-overlay"
