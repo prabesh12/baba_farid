@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Logo from '@/public/Logo.jpeg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,33 +13,33 @@ export default function Header() {
   const navLinks = [
     { label: "Services", href: "#services" },
     { label: "Reviews", href: "#reviews" },
-    { label: "Feedback", href: "#feedback" },
     { label: "Projects", href: "#projects" },
     { label: "FAQ", href: "#faq" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-white/95 backdrop-blur-md shadow-sm">
-      <div className="flex w-full items-center gap-6 px-4 py-3 sm:px-8">
-        <a href="#home" className="group flex items-center gap-3 font-heading text-xl uppercase tracking-wider">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-white/100 backdrop-blur-md shadow-sm">
+      <div className="flex w-full items-center gap-4 px-4 sm:gap-6 sm:px-8">
+        <a href="#" className="group">
           <Image
-            src={Logo}
-            alt="Baba Faarid Roofing logo"
-            width={112}
-            height={112}
+            src="/logo.png"
+            alt="Baba Farid Roofing logo"
+            width={250}
+            height={250}
+            quality={100}
             priority
-            className="rounded-sm object-cover w-14 h-14"
+            className="h-25 w-25 object-contain"
+
           />
-          <span className="font-bold text-primary hidden sm:block">Baba Faarid Roofing</span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="ml-auto hidden flex-1 flex-wrap items-center justify-end gap-x-8 gap-y-2 text-xs font-bold uppercase tracking-wide sm:text-sm lg:flex">
+        <nav className="ml-auto hidden flex-wrap items-center justify-end gap-6 text-xs font-bold uppercase tracking-wide sm:text-sm lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative text-secondary hover:text-primary after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-secondary hover:text-primary transition-colors after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>

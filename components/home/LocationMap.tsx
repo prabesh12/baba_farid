@@ -16,7 +16,7 @@ export default function LocationMap() {
         {/* Contact Info */}
         <div className="space-y-6">
           <div className="group rounded-xl border border-primary/15 bg-gradient-to-br from-white to-primary/2 p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
-            <h3 className="font-heading text-2xl font-bold text-primary mb-4">Baba Faarid Roofing</h3>
+            <h3 className="font-heading text-2xl font-bold text-primary mb-4">Baba Farid Roofing</h3>
 
             <div className="space-y-4">
               <div>

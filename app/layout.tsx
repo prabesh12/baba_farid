@@ -14,7 +14,7 @@ const bodyFont = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Baba Faarid Roofing",
+  title: "Baba Farid Roofing",
   description: "Single-page roofing website built with Next.js",
 };
 

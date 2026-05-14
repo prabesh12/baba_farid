@@ -18,7 +18,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
   return (
     <section id="process" className="border-t border-primary/10 bg-gradient-to-b from-white via-primary/2 to-white py-6 md:py-12">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -29,7 +29,7 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Choose Us</span>
           </h2>
           <p className="text-lg text-secondary/70 max-w-2xl leading-relaxed">
-            Customers choose Baba Faarid Roofing for simple quotes, reliable scheduling, quality workmanship, and a clean finish on every project.
+            Customers choose Baba Farid Roofing for simple quotes, reliable scheduling, quality workmanship, and a clean finish on every project.
           </p>
         </motion.div>
 
@@ -41,13 +41,13 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
               initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              whileHover={{ 
+              whileHover={{
                 y: -5,
                 scale: 1.01,
                 boxShadow: "0 15px 25px -5px rgb(0 0 0 / 0.1)"
               }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: idx * 0.1,
                 y: { type: "spring", stiffness: 400, damping: 25 }
               }}
@@ -82,8 +82,8 @@ export default function WhyChooseUsSection({ restorationProcess, installationPro
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: (4 + idx) * 0.1,
                 y: { type: "spring", stiffness: 300, damping: 20 }
               }}
