@@ -4,6 +4,7 @@ import EnquirySection from "./EnquirySection";
 import FaqSection from "./FaqSection";
 import FeedbackSection from "./FeedbackSection";
 import Footer from "./Footer";
+import GoogleReviewsSection from "./GoogleReviewsSection";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import ImageCarousel from "./ImageCarousel";
@@ -21,6 +22,7 @@ export {
   FaqSection,
   FeedbackSection,
   Footer,
+  GoogleReviewsSection,
   Header,
   HeroSection,
   ImageCarousel,
